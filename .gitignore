@@ -1,4 +1,8 @@
+# local webhook url file
 webhook_url.conf
+
+# calendar files
+*.ics
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
