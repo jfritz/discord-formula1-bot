@@ -1,5 +1,6 @@
-import urllib2
 import urllib
+import urllib2
+
 
 class DiscordWebhook(object):
     HEADERS = {
@@ -38,11 +39,11 @@ class DiscordWebhook(object):
             print "------------------------"
             print "Discord Webhook Response:"
             print """
-            {}
-            Result Status: {}
-            URL: {}
-            Info: {}
-            """.format(result_content, result.getcode(), result.geturl(), result.info())
+{}
+Result Status: {}
+URL: {}
+Info: {}
+""".format(result_content, result.getcode(), result.geturl(), result.info())
             print "------------------------"
 
-        return set(result.getcode(), result.info())
+        return [result.getcode(), result.info()]
