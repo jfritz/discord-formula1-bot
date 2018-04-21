@@ -17,6 +17,11 @@ class F1Calendar(object):
             if item.name == "VEVENT":
                 self.cal_events.append(item)
 
+    def get_events_next_7d(self):
+        """
+        Returns friendly-strings of events that will begin in the next 24h.
+        """
+        return self.get_events(upcoming_only=True, filter=self._event_filter_next_7d)
 
     def get_events_next_24h(self):
         """
@@ -76,6 +81,11 @@ class F1Calendar(object):
         Event filter. True if the event occurs in the next 23h:59m:59s
         """
         if diff.days < 1:
+            return True
+        return False
+
+    def _event_filter_next_7d(self, diff):
+        if diff.days < 8:
             return True
         return False
 
