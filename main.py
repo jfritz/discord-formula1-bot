@@ -3,7 +3,7 @@ import datetime
 from DiscordWebhook import DiscordWebhook
 from F1Calendar import F1Calendar
 
-DO_REQUEST = False
+DO_REQUEST = True
 CALENDAR_FILE = "formula.1.2018.ics"
 WEBHOOK_URL = open('webhook_url.conf', 'r').read().strip()
 
