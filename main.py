@@ -5,7 +5,7 @@ from F1Calendar import F1Calendar
 
 DO_REQUEST = True
 CALENDAR_FILE = "formula.1.2018.ics"
-WEBHOOK_URL = open('webhook_url.conf', 'r').read().strip()
+WEBHOOK_URL = open('webhook_url.conf', 'r').readlines()[0].strip()
 
 webhook = DiscordWebhook(WEBHOOK_URL)
 cal = F1Calendar(CALENDAR_FILE)
