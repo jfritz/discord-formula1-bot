@@ -96,7 +96,7 @@ class F1Calendar(object):
         # Format string message for next event
         # See http://strftime.org/
         start_friendly = start.strftime("%a, %b %d %I:%M %p %Z")
-        return u"**{}** starts in **{}** at **{}**".format(title, diff, start_friendly)
+        return u"**{}** starts in **{}** at **{}**".format(title, diff, start_friendly.encode('utf-8'))
 
     def _get_event_data(self, event):
         """

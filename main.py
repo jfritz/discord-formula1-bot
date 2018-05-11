@@ -13,11 +13,11 @@ dow = datetime.datetime.today().weekday()
 
 # Monday
 if dow == 0:
-    prefix_str = "Happy Monday! Here is the schedule for the next race weekend: \n"
+    prefix_str = u"Happy Monday! Here is the schedule for the next race weekend: \n"
     events = cal.get_next_race_events()
 # Thurs, Fri, Sat
 elif dow in (3, 4, 5):
-    prefix_str = "Race Weekend! In the next 24 hours: \n"
+    prefix_str = u"Race Weekend! In the next 24 hours: \n"
     events = cal.get_events_next_24h()
 
 
