@@ -23,7 +23,7 @@ elif dow in (3, 4, 5):
 
 if events:
     events_str = "\n".join(events)
-    print "Sending: " + prefix_str + events_str
+    print "Sending: " + prefix_str.encode('utf-8') + events_str.encode('utf-8')
 
     if DO_REQUEST:
         webhook.send_message(prefix_str + events_str)
