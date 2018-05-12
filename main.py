@@ -4,7 +4,7 @@ import os
 from DiscordWebhook import DiscordWebhook
 from F1Calendar import F1Calendar
 
-DO_REQUEST = False
+DO_REQUEST = True
 root_dir = os.path.dirname(os.path.realpath(__file__))
 CALENDAR_FILE = root_dir + "/formula.1.2018.ics"
 WEBHOOK_URL = open(root_dir + '/webhook_url.conf', 'r').readlines()[0].strip()
@@ -19,7 +19,7 @@ if dow == 0:
     events = cal.get_next_race_events()
 # Thurs, Fri, Sat
 elif dow in (3, 4, 5):
-    prefix_str = u"Race Weekend! In the next 24 hours: \n"
+    prefix_str = u":checkered_flag: Race Weekend! In the next 24 hours: \n"
     events = cal.get_events_next_24h()
 
 
