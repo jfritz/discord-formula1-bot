@@ -1,11 +1,13 @@
 #!/usr/bin/python
 import datetime
+import os
 from DiscordWebhook import DiscordWebhook
 from F1Calendar import F1Calendar
 
-DO_REQUEST = True
-CALENDAR_FILE = "formula.1.2018.ics"
-WEBHOOK_URL = open('webhook_url.conf', 'r').readlines()[0].strip()
+DO_REQUEST = False
+root_dir = os.path.dirname(os.path.realpath(__file__))
+CALENDAR_FILE = root_dir + "/formula.1.2018.ics"
+WEBHOOK_URL = open(root_dir + '/webhook_url.conf', 'r').readlines()[0].strip()
 
 webhook = DiscordWebhook(WEBHOOK_URL)
 cal = F1Calendar(CALENDAR_FILE)
