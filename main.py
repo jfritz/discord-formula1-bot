@@ -12,20 +12,24 @@ WEBHOOK_URL = open(root_dir + '/webhook_url.conf', 'r').readlines()[0].strip()
 webhook = DiscordWebhook(WEBHOOK_URL)
 cal = F1Calendar(CALENDAR_FILE)
 dow = datetime.datetime.today().weekday()
+output_str = None
 
 # Monday
 if dow == 0:
-    prefix_str = u"Happy Monday! Here is the schedule for the next race weekend: \n"
+    prefix_str = u"<:f1:436383126743285760> Happy Monday! Here is the schedule for the next race weekend: \n"
+    suffix_str = u"<:nico:436342726309445643>"
     events = cal.get_next_race_events()
+    output_str = prefix_str + "\n".join(events) + suffix_str
 # Thurs, Fri, Sat
 elif dow in (3, 4, 5):
-    prefix_str = u":checkered_flag: Race Weekend! In the next 24 hours: \n"
+    prefix_str = u"<:f1:436383126743285760> Race Weekend! In the next 24 hours: \n"
+    suffix_str = u"<:nico:436342726309445643>"
     events = cal.get_events_next_24h()
+    output_str = prefix_str + "\n".join(events) + suffix_str
 
 
 if events:
-    events_str = "\n".join(events)
-    print "Sending: " + prefix_str.encode('utf-8') + events_str.encode('utf-8')
+    print "Sending: " + output_str.encode('utf-8')
 
     if DO_REQUEST:
-        webhook.send_message(prefix_str + events_str)
+        webhook.send_message(output_str)
