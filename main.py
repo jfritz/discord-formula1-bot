@@ -20,8 +20,8 @@ if dow == 0:
     suffix_str = u"<:nico:436342726309445643>"
     events = cal.get_next_race_events()
     output_str = prefix_str + "\n".join(events) + suffix_str
-# Thurs, Fri, Sat
-elif dow in (3, 4, 5):
+# Thurs, Fri, Sat, Sun
+elif dow in (3, 4, 5, 6):
     prefix_str = u"<:f1:436383126743285760> Race Weekend! In the next 24 hours: \n"
     suffix_str = u"<:nico:436342726309445643>"
     events = cal.get_events_next_24h()

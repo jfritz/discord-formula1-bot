@@ -7,5 +7,5 @@ Mondays -
     Send a message with the full next race weekend
     
     
-Thursdays, Fridays, Saturdays -
+Thursdays, Fridays, Saturdays, Sundays -
     Send a message with events that will occur in the next 24h (if any)
