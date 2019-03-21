@@ -6,13 +6,16 @@ from F1Calendar import F1Calendar
 
 DO_REQUEST = True
 root_dir = os.path.dirname(os.path.realpath(__file__))
-CALENDAR_FILE = root_dir + "/formula.1.2018.ics"
+CALENDAR_FILE = root_dir + "/formula.1.2019.ics"
 WEBHOOK_URL = open(root_dir + '/webhook_url.conf', 'r').readlines()[0].strip()
 
 webhook = DiscordWebhook(WEBHOOK_URL)
 cal = F1Calendar(CALENDAR_FILE)
 dow = datetime.datetime.today().weekday()
 output_str = None
+
+
+dow = 0
 
 # Monday
 if dow == 0:
