@@ -38,8 +38,8 @@ class F1Calendar(object):
         for e in events:
             ret.append(e)
 
-            # The race is the last event in a weekend
-            if e.lower().strip().endswith("grand prix"): 
+            # The race on Sunday is the last event in a weekend
+            if "sun, " in e.lower():
                 break
         return ret
 
