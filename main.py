@@ -14,9 +14,6 @@ cal = F1Calendar(CALENDAR_FILE)
 dow = datetime.datetime.today().weekday()
 output_str = None
 
-
-dow = 0
-
 # Monday
 if dow == 0:
     prefix_str = u"<:f1:436383126743285760> Happy Monday! Here is the schedule for the next race weekend: \n"
