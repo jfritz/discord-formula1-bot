@@ -13,6 +13,7 @@ webhook = DiscordWebhook(WEBHOOK_URL)
 cal = F1Calendar(CALENDAR_FILE)
 dow = datetime.datetime.today().weekday()
 output_str = None
+events = None
 
 # Monday
 if dow == 0:
@@ -26,7 +27,6 @@ elif dow in (3, 4, 5, 6):
     suffix_str = u"<:nico:436342726309445643>"
     events = cal.get_events_next_24h()
     output_str = prefix_str + "\n".join(events) + suffix_str
-
 
 if events:
     print "Sending: " + output_str.encode('utf-8')
