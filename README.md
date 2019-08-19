@@ -9,3 +9,17 @@ Mondays -
     
 Thursdays, Fridays, Saturdays, Sundays -
     Send a message with events that will occur in the next 24h (if any)
+
+## Requirements
+- python 2.7
+- python-dateutil
+- icalendar
+
+## Installation
+Debian Example, do similarly for other distros/environments:
+ sudo apt-get install python-pip python
+ pip install python-dateutil
+ pip install icalendar
+ 
+
+ 
